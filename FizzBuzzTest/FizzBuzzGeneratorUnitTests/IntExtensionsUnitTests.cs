@@ -28,5 +28,21 @@ namespace FizzBuzzGeneratorUnitTests
         {
             new Random().Next(100).IsMultipleOf(0).Should().BeFalse();
         }
+
+        [TestCase(3, 3)]
+        [TestCase(33, 3)]
+        [TestCase(23, 3)]
+        public void ContainsANumber_Should_Retun_True_When_Number_Contains_SubNumber(int number, int subNumber)
+        {
+            number.ContainsANumber(subNumber).Should().BeTrue();
+        }
+
+        [TestCase(5, 3)]
+        [TestCase(9, 3)]
+        [TestCase(12, 3)]
+        public void ContainsANumber_Should_Retun_False_When_Number_Does_Not_Contain_SubNumber(int number, int subNumber)
+        {
+            number.ContainsANumber(subNumber).Should().BeFalse();
+        }
     }
 }

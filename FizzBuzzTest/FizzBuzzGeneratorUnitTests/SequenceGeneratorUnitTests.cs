@@ -17,10 +17,10 @@ namespace FizzBuzzGeneratorUnitTests
         }
 
         [Test]
-        public void Generate_Should_Retun_Fizz_When_Number_Is_A_Multiple_Of_3()
+        public void Generate_Should_Retun_Fizz_When_Number_Is_A_Multiple_Of_3_But_Does_Not_Contain_3()
         {
-            var result = _generator.Generate(5);
-            result.ElementAt(2).Should().Be("fizz");
+            var result = _generator.Generate(10);
+            result.ElementAt(8).Should().Be("fizz");
         }
 
         [Test]
@@ -87,6 +87,22 @@ namespace FizzBuzzGeneratorUnitTests
         {
             var result = _generator.Generate(limit);
             result.Count.Should().Be(0);
+        }
+
+        [TestCase(2)]
+        [TestCase(12)]
+        public void Generate_Should_Retun_Lucky_When_Number_Contains_Three_On_Possition(int possition)
+        {
+            var result = _generator.Generate(15);
+            result.ElementAt(possition).Should().Be("lucky");
+        }
+
+        [TestCase(2)]
+        [TestCase(32)]
+        public void Generate_Should_Not_Retun_Fizz_When_Number_Contains_Three_And_Is_Multiple_of_Three_On_Possition(int possition)
+        {
+            var result = _generator.Generate(35);
+            result.ElementAt(possition).Should().NotBe("fizz");
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace FizzBuzzGenerator
+﻿using System.Globalization;
+
+namespace FizzBuzzGenerator
 {
     public static class IntExtentions
     {
@@ -10,6 +12,11 @@
             }
 
             return number % divisor == 0;
+        }
+
+        public static bool ContainsANumber(this int number, int subNumber)
+        {
+            return number.ToString(CultureInfo.InvariantCulture).Contains(subNumber.ToString(CultureInfo.InvariantCulture));
         }
     }
 }
