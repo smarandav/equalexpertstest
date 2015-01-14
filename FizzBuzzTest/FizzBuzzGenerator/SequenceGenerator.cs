@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace FizzBuzzGenerator
 {
@@ -9,18 +10,20 @@ namespace FizzBuzzGenerator
         private const string Buzz = "buzz";
         private const string FizzBuzz = "fizzbuzz";
         private const string Lucky = "lucky";
+        private const string Integer = "integer";
 
-        public IList<string> Generate(int limit)
+        public FizzBuzzResult Generate(int limit)
         {
-            var list = new List<string>();
-
+            var result = InitFizBuzzResult();
+           
             if (limit > 0)
             {
                 for (int i = 1; i <= limit; i++)
                 {
                     if (i.ContainsANumber(3))
                     {
-                        list.Add(Lucky);
+                        result.SequenceNumbers.Add(Lucky);
+                        result.SequenceCounts[Lucky]++;
                     }
                     else
                     {
@@ -30,23 +33,27 @@ namespace FizzBuzzGenerator
 
                         if (isMultipleOfFifteen)
                         {
-                            list.Add(FizzBuzz);
+                            result.SequenceNumbers.Add(FizzBuzz);
+                            result.SequenceCounts[FizzBuzz]++;
                         }
                         else
                         {
                             if (isMultipleOfThree)
                             {
-                                list.Add(Fizz);
+                                result.SequenceNumbers.Add(Fizz);
+                                result.SequenceCounts[Fizz]++;
                             }
                             else
                             {
                                 if (isMultipleOfFive)
                                 {
-                                    list.Add(Buzz);
+                                    result.SequenceNumbers.Add(Buzz);
+                                    result.SequenceCounts[Buzz]++;
                                 }
                                 else
                                 {
-                                    list.Add(i.ToString(CultureInfo.InvariantCulture));
+                                    result.SequenceNumbers.Add(i.ToString(CultureInfo.InvariantCulture));
+                                    result.SequenceCounts[Integer]++;
                                 }
                             }
                         }
@@ -54,7 +61,19 @@ namespace FizzBuzzGenerator
                 }
             }
 
-            return list;
+            return result;
+        }
+        
+        private FizzBuzzResult InitFizBuzzResult()
+        {
+            var result = new FizzBuzzResult();
+            result.SequenceCounts.Add(Fizz, 0);
+            result.SequenceCounts.Add(Buzz, 0);
+            result.SequenceCounts.Add(FizzBuzz, 0);
+            result.SequenceCounts.Add(Lucky, 0);
+            result.SequenceCounts.Add(Integer, 0);
+
+            return result;
         }
     }
 }

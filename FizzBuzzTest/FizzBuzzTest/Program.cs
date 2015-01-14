@@ -18,9 +18,16 @@ namespace FizzBuzzTest
 
             var sequence = SequenceGenerator.Generate(limit);
 
-            foreach (var value in sequence)
+            foreach (var value in sequence.SequenceNumbers)
             {
                 Console.Write("{0} ", value);
+            }
+
+            Console.WriteLine();
+
+            foreach (var value in sequence.SequenceCounts)
+            {
+                Console.WriteLine("{0}: {1}", value.Key, value.Value);
             }
         }
     }
