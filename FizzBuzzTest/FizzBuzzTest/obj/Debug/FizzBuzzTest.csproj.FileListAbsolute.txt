@@ -1,8 +1,0 @@
-C:\FizzBuzz\equalexpertstest\FizzBuzzTest\FizzBuzzTest\bin\Debug\FizzBuzzTest.exe.config
-C:\FizzBuzz\equalexpertstest\FizzBuzzTest\FizzBuzzTest\bin\Debug\FizzBuzzTest.exe
-C:\FizzBuzz\equalexpertstest\FizzBuzzTest\FizzBuzzTest\bin\Debug\FizzBuzzTest.pdb
-C:\FizzBuzz\equalexpertstest\FizzBuzzTest\FizzBuzzTest\bin\Debug\FizzBuzzGenerator.dll
-C:\FizzBuzz\equalexpertstest\FizzBuzzTest\FizzBuzzTest\bin\Debug\FizzBuzzGenerator.pdb
-C:\FizzBuzz\equalexpertstest\FizzBuzzTest\FizzBuzzTest\obj\Debug\FizzBuzzTest.csprojResolveAssemblyReference.cache
-C:\FizzBuzz\equalexpertstest\FizzBuzzTest\FizzBuzzTest\obj\Debug\FizzBuzzTest.exe
-C:\FizzBuzz\equalexpertstest\FizzBuzzTest\FizzBuzzTest\obj\Debug\FizzBuzzTest.pdb
