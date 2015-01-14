@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace FizzBuzzGenerator
+﻿namespace FizzBuzzGenerator
 {
     public interface IGenerator
     {
